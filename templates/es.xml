@@ -1,0 +1,195 @@
+<templateSet group="es">
+  <template name="cat" value="GET {{es-base-url}}/_cat&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cat" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-cluster-health" value="GET {{es-base-url}}/_cluster/health?pretty&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cluster/health?pretty" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-cluster-state" value="GET {{es-base-url}}/_cluster/state&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cluster/state" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-cluster-stats" value="GET {{es-base-url}}/_cluster/stats?human&amp;pretty&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cluster/stats" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="list-cluster-pending-tasks" value="GET {{es-base-url}}/_cluster/pending_tasks&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cluster/pending_tasks" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="list-cluster-nodes" value="GET {{es-base-url}}/_nodes/$NODE_PARAM$&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_nodes/node-a,node-b" toReformat="false" toShortenFQNames="true">
+    <variable name="NODE_PARAM" expression="" defaultValue="&quot;node-a,node-b&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-cluster-settings" value="GET {{es-base-url}}/_cluster/settings?include_defaults=true&amp;flat_settings=true&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cluster/settings?include_defaults=true&amp;flat_settings=true" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="list-indexes" value="GET {{es-base-url}}/_cat/indices&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_cat/indices" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index" value="GET {{es-base-url}}/$INDEX_NAME$&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/index-name" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index-settings" value="GET {{es-base-url}}/$INDEX_NAME$/_settings&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/index-name/_settings" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index-mapping" value="GET {{es-base-url}}/$INDEX_NAME$/_mapping&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/index-name/_mapping" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="create-index" value="PUT {{es-base-url}}/$INDEX_NAME$&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;Content-Type: application/json&#10;&#10;{&#10;  &quot;settings&quot;: {&#10;    &quot;number_of_replicas&quot;: 1,&#10;    &quot;number_of_shards&quot;: 2,&#10;    &quot;analysis&quot;: {},&#10;    &quot;refresh_interval&quot;: &quot;1s&quot;&#10;  },&#10;  &quot;mappings&quot;: {&#10;    &quot;dynamic&quot;: false,&#10;    &quot;properties&quot;: {&#10;      &quot;title&quot;: {&#10;        &quot;type&quot;: &quot;text&quot;,&#10;        &quot;analyzer&quot;: &quot;english&quot;&#10;      },&#10;      &quot;cate_id&quot;: {&#10;        &quot;type&quot;: &quot;keyword&quot;&#10;      }&#10;    }&#10;  }&#10;}&#10;    &#10;###" description="PUT {{es-base-url}}/index-name" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="update-index-settings" value="PUT {{es-base-url}}/$INDEX_NAME$&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;Content-Type: application/json&#10;&#10;{&#10;  &quot;index&quot;: {&#10;    &quot;refresh_interval&quot;: &quot;-1&quot;,&#10;    &quot;number_of_shards&quot;: 0&#10;  }&#10;}&#10;&#10;###" description="PUT {{es-base-url}}/index-name" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;my-index&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="update-index-mapping" value="PUT {{es-base-url}}/$INDEX_NAME$/_mapping&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;Content-Type: application/json&#10;&#10;{&#10;  &quot;properties&quot;: {&#10;    &quot;tag&quot;: {&#10;      &quot;type&quot;: &quot;keyword&quot;&#10;    }&#10;  }&#10;}&#10;&#10;###" description="PUT {{es-base-url}}/index-name/_mapping" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="index-doc" value="POST {{es-base-url}}/$INDEX_NAME$/_doc/$DOC_ID$&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;{&#10;  &quot;title&quot;: &quot;Elastic is funny&quot;,&#10;  &quot;tag&quot;: [&#10;    &quot;lucene&quot;&#10;  ]&#10;}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_doc" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <variable name="DOC_ID" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="delete-doc" value="DELETE {{es-base-url}}/$INDEX_NAME$/_doc/$DOC_ID$&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="DELETE {{es-base-url}}/index-name/_doc/1" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <variable name="DOC_ID" expression="" defaultValue="&quot;1&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="open-index" value="POST {{es-base-url}}/$INDEX_NAME$/_open&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_open" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="close-index" value="POST {{es-base-url}}/$INDEX_NAME$/_close&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_close" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="add-index-alias" value="POST {{es-base-url}}/_aliases&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;{&#10;  &quot;actions&quot;: [&#10;    &quot;add&quot;: {&#10;      &quot;index&quot;: &quot;$INDEX_NAME$&quot;,&#10;      &quot;alias&quot;: &quot;$INDEX_ALIAS_NAME$&quot;,&#10;      &quot;filter&quot;: {&#10;        &quot;term&quot;: {&#10;          &quot;user&quot;: &quot;admie&quot;&#10;        }&#10;      }&#10;    }&#10;  ]&#10;}&#10;&#10;###" description="POST {{es-base-url}}/_aliases" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <variable name="INDEX_ALIAS_NAME" expression="" defaultValue="&quot;index-alias-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="remove-index-alias" value="POST {{es-base-url}}/_aliases&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;{&#10;  &quot;actions&quot;: [&#10;    &quot;remove&quot;: {&#10;      &quot;index&quot;: &quot;$INDEX_NAME$&quot;,&#10;      &quot;alias&quot;: &quot;$INDEX_ALIAS_NAME$&quot;&#10;    }&#10;  ]&#10;}&#10;&#10;###" description="POST {{es-base-url}}/_aliases" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <variable name="INDEX_ALIAS_NAME" expression="" defaultValue="&quot;index-alias-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="list-index-aiases" value="GET {{es-base-url}}/_aliases&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_aliases" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index-alias" value="GET {{es-base-url}}/$INDEX_NAME$/_aliases&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/_aliases" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index-stats" value="GET {{es-base-url}}/$INDEX_NAME$/_stats&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/index-name/_stats" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index-segments" value="GET {{es-base-url}}/$INDEX_NAME$/_segments&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/index-name/_segments" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="get-index-recovery" value="GET {{es-base-url}}/$INDEX_NAME$/_recovery?pretty&amp;human&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="GET {{es-base-url}}/index-name/_recovery?pretty&amp;human" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="clear-index-cache" value="POST {{es-base-url}}/$INDEX_NAME$/_cache/clear&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_cache/clear" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="refresh-index" value="POST {{es-base-url}}/$INDEX_NAME$/_refresh&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_refresh" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="flush-index" value="POST {{es-base-url}}/$INDEX_NAME$/_flush&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_flush" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;index-name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="forcemerge-index" value="POST {{es-base-url}}/$INDEX_NAME$/_forcemerge&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;###" description="POST {{es-base-url}}/index-name/_forcemerge" toReformat="false" toShortenFQNames="true">
+    <variable name="INDEX_NAME" expression="" defaultValue="&quot;my-index&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="reindex" value="POST {{es-base-url}}/_reindex&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;&#10;{&#10;  &quot;source&quot;: {&#10;    &quot;index&quot;: &quot;$SRC_INDEX$&quot;,&#10;    &quot;query&quot;: {&#10;      &quot;match&quot;: {&#10;        &quot;field-name&quot;: {&#10;          &quot;query&quot;: &quot;query-value&quot;&#10;        }&#10;      }&#10;    }&#10;  },&#10;  &quot;dest&quot;: {&#10;    &quot;index&quot;: &quot;$DEST_INDEX$&quot;&#10;  }&#10;}&#10;&#10;###" description="POST {{es-base-url}}/_reindex" toReformat="false" toShortenFQNames="true">
+    <variable name="SRC_INDEX" expression="" defaultValue="&quot;src-index&quot;" alwaysStopAt="true" />
+    <variable name="DEST_INDEX" expression="" defaultValue="&quot;dest-index&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="create-index-template" value="{&#10;    &quot;settings&quot;: {&#10;        &quot;num_of_shards&quot;: 1,&#10;        &quot;num_of_replicas&quot;: 1&#10;    },&#10;    &quot;mappings&quot;: {&#10;        &quot;field1&quot;: {&#10;            &quot;type&quot;: &quot;keyword&quot;&#10;        },&#10;        &quot;field2&quot;: {&#10;            &quot;type&quot;: &quot;text&quot;&#10;        }&#10;    }&#10;}" description="create es index template" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="search-doc" value="GET {{es-base-url}}/$index_name$/_search&#10;Authorization: Basic {{es-user}} {{es-password}}&#10;Content-Type: application/json&#10;&#10;{&#10;    &quot;query&quot;: {&#10;        &quot;match_all&quot;: {&#10;        }&#10;    }&#10;}&#10;&#10;###" description="search es doc" toReformat="false" toShortenFQNames="true">
+    <variable name="index_name" expression="" defaultValue="&quot;index_name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+  <template name="json" value="{&#10;    &quot;name&quot;: &quot;aaa&quot;,&#10;    &quot;age&quot;: 100&#10;}" description="test" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="REQUEST" value="true" />
+    </context>
+  </template>
+</templateSet>
