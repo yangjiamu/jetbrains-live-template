@@ -1,0 +1,282 @@
+<templateSet group="mybatis">
+  <template name="mmapper" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#10;&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTO Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;&#10;&#10;&lt;mapper namespace=&quot;$access_dao$&quot;&gt;&#10;&#10;&lt;/mapper&gt;" description="mybatis mapper template" toReformat="false" toShortenFQNames="true">
+    <variable name="access_dao" expression="" defaultValue="&quot;XXXDAO&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ins" value="&lt;insert id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    INSERT INTO $table$($col1$, $col2$, $col3$,&#10;                        $col4$, $col5$, $col6$)&#10;    VALUES(#{$prop1$}, #{$prop2$}, #{$prop3$},&#10;           #{$prop4$}, #{$prop5$}, #{$prop6$})&#10;&lt;/insert&gt;" description="insert" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;insertXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.*&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table_name&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col5" expression="" defaultValue="&quot;col5&quot;" alwaysStopAt="true" />
+    <variable name="col6" expression="" defaultValue="&quot;col6&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ins-batch" value="&lt;insert id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    INSERT INTO $table$($col1$, $col2$, $col3$,&#10;                        $col4$, $col5$, $col6$)&#10;    VALUES&#10;    &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; separator=&quot;,&quot;&gt;&#10;        (#{$item$.$prop1$}, #{$item$.$prop2$}, #{$item$.$prop3$},&#10;         #{$item$.$prop4$}, #{$item$.$prop5$}, #{$item$.$prop6$})&#10;    &lt;/foreach&gt;&#10;&lt;/insert&gt;" description="batch insert" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;insertXXXs&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table_name&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col5" expression="" defaultValue="&quot;col5&quot;" alwaysStopAt="true" />
+    <variable name="col6" expression="" defaultValue="&quot;col6&quot;" alwaysStopAt="true" />
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;whe" value="&lt;where&gt;&#10;    &lt;if test=&quot;$prop1$ != null&quot;&gt;$col1$ = #{$prop1$}&lt;/if&gt;&#10;    &lt;if test=&quot;$prop2$ != null&quot;&gt;$col2$ = #{$prop2$}&lt;/if&gt;&#10;&lt;/where&gt;" description="where tag" toReformat="false" toShortenFQNames="true">
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;sel" value="&lt;select id=&quot;$func_name$&quot; $r_map_or_type$=&quot;$r_map_or_type_value$&quot;&gt;&#10;    SELECT *&#10;    FROM $table$&#10;    WHERE $cond_col$ $cond$ $END$$cond_value$&#10;&lt;/select&gt;" description="select" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;selectXXX&quot;" alwaysStopAt="true" />
+    <variable name="r_map_or_type" expression="" defaultValue="&quot;resultType&quot;" alwaysStopAt="true" />
+    <variable name="r_map_or_type_value" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table_name&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;cond_col&quot;" alwaysStopAt="true" />
+    <variable name="cond" expression="" defaultValue="&quot;cond&quot;" alwaysStopAt="true" />
+    <variable name="cond_value" expression="" defaultValue="&quot;cond_value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="vof-in" value="&lt;foreach collection=&quot;$coll$&quot; index=&quot;index&quot; item=&quot;$item$&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;&#10;    $END$#{$item$}&#10;&lt;/foreach&gt;" description="value of in expression" toReformat="false" toShortenFQNames="true">
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;fe" value="&lt;foreach collection=&quot;$coll$&quot; open=&quot;$open$&quot; separator=&quot;$sep$&quot; close=&quot;$close$&quot;&gt;&#10;    $END$$body$&#10;&lt;/foreach&gt;" description="foreach" toReformat="false" toShortenFQNames="true">
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="open" expression="" defaultValue="&quot;(&quot;" alwaysStopAt="true" />
+    <variable name="sep" expression="" defaultValue="&quot;,&quot;" alwaysStopAt="true" />
+    <variable name="close" expression="" defaultValue="&quot;)&quot;" alwaysStopAt="true" />
+    <variable name="body" expression="" defaultValue="&quot;body&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;selj" value="&lt;select id=&quot;$func_namr$&quot; $r_map_or_type$=&quot;$r_map_or_type_value$&quot;&gt;&#10;    SELECT *&#10;    FROM $table1$ $alias1$&#10;        JOIN $table2$ $alias2$&#10;            ON $alias1$.$join_col$ = $alias2$.$join_col$&#10;    WHERE $alias1$.$cond_col$ $cond$ $END$$cond_value$&#10;&lt;/select&gt;" description="select join" toReformat="false" toShortenFQNames="true">
+    <variable name="func_namr" expression="" defaultValue="&quot;selectXXX&quot;" alwaysStopAt="true" />
+    <variable name="r_map_or_type" expression="" defaultValue="&quot;resultType&quot;" alwaysStopAt="true" />
+    <variable name="r_map_or_type_value" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table1" expression="" defaultValue="&quot;table1&quot;" alwaysStopAt="true" />
+    <variable name="alias1" expression="" defaultValue="&quot;t1&quot;" alwaysStopAt="true" />
+    <variable name="table2" expression="" defaultValue="&quot;table2&quot;" alwaysStopAt="true" />
+    <variable name="alias2" expression="" defaultValue="&quot;t2&quot;" alwaysStopAt="true" />
+    <variable name="join_col" expression="" defaultValue="&quot;join_col&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;cond_col&quot;" alwaysStopAt="true" />
+    <variable name="cond" expression="" defaultValue="&quot;=&quot;" alwaysStopAt="true" />
+    <variable name="cond_value" expression="" defaultValue="&quot;cond_value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ins-odku" value="&lt;insert id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    INSERT INTO $table$($col1$, $col2$, $col3$,&#10;                        $col4$, $col5$, $col6$)&#10;    VALUES(#{$prop1$}, #{$prop2$}, #{$prop3$},&#10;           #{$prop4$}, #{$prop5$}, #{$prop6$})&#10;    ON DUPLICATE KEY UPDATE&#10;        $col1$ = VALUES($col1$),&#10;        $col2$ = VALUES($col2$),&#10;        $col3$ = VALUES($col3$),&#10;        $col4$ = VALUES($col4$),&#10;        $col5$ = VALUES($col5$),&#10;        $col6$ = VALUES($col6$)&#10;&lt;/insert&gt;" description="insert on duplicate update" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;upsertXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col5" expression="" defaultValue="&quot;col5&quot;" alwaysStopAt="true" />
+    <variable name="col6" expression="" defaultValue="&quot;col6&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ins-batch-odku" value="&lt;insert id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    INSERT INTO $table$($col1$, $col2$, $col3$,&#10;                        $col4$, $col5$, $col6$)&#10;    VALUES&#10;    &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; separator=&quot;,&quot;&gt;&#10;        (#{$item$.$prop1$}, #{$item$.$prop2$}, #{$item$.$prop3$},&#10;         #{$item$.$prop4$}, #{$item$.$prop5$}, #{$item$.$prop6$})&#10;    &lt;/foreach&gt;&#10;    ON DUPLICATE KEY UPDATE&#10;        $col1$ = VALUES($col1$),&#10;        $col2$ = VALUES($col2$),&#10;        $col3$ = VALUES($col3$),&#10;        $col4$ = VALUES($col4$),&#10;        $col5$ = VALUES($col5$),&#10;        $col6$ = VALUES($col6$)&#10;&lt;/insert&gt;" description="insert batch on duplicate update" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;upsertXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col5" expression="" defaultValue="&quot;col5&quot;" alwaysStopAt="true" />
+    <variable name="col6" expression="" defaultValue="&quot;col6&quot;" alwaysStopAt="true" />
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;upd" value="&lt;update id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    UPDATE $table$&#10;    SET $col1$ = #{$prop1$},&#10;        $col2$ = #{$prop2$},&#10;        $col3$ = #{$prop3$}$END$&#10;    WHERE $cond_col$ $cond$ #{$cond_value$}&#10;&lt;/update&gt;" description="update" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;updateXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;cond_col&quot;" alwaysStopAt="true" />
+    <variable name="cond" expression="" defaultValue="&quot;cond&quot;" alwaysStopAt="true" />
+    <variable name="cond_value" expression="" defaultValue="&quot;cond_value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;upd-safe" value="&lt;update id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    UPDATE $table$&#10;    &lt;set&gt;&#10;        &lt;if test=&quot;$prop1$ != null&quot;&gt;$col1$ = #{$prop1$}, &lt;/if&gt;&#10;        &lt;if test=&quot;$prop2$ != null&quot;&gt;$col2$ = #{$prop2$}, &lt;/if&gt;&#10;        &lt;if test=&quot;$prop3$ != null&quot;&gt;$col3$ = #{$prop3$}&lt;/if&gt;&#10;    &lt;/set&gt;&#10;    WHERE $END$$cond_col$ $cond$ #{$cond_value$}&#10;&lt;/update&gt;" description="update with safe check" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;updateXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;cond_col&quot;" alwaysStopAt="true" />
+    <variable name="cond" expression="" defaultValue="&quot;=&quot;" alwaysStopAt="true" />
+    <variable name="cond_value" expression="" defaultValue="&quot;cond_value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;set" value="&lt;set&gt;&#10;    &lt;if test=&quot;$prop1$ != null&quot;&gt;$col1$ = $prop1$, &lt;/if&gt;&#10;    &lt;if test=&quot;$prop2$ != null&quot;&gt;$col2$ = $prop2$, &lt;/if&gt;&#10;    &lt;if test=&quot;$prop3$ != null&quot;&gt;$col3$ = $prop3$&lt;/if&gt;&#10;&lt;/set&gt;" description="set tag" toReformat="false" toShortenFQNames="true">
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;upd-batch" value="&lt;update id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    UPDATE $table$&#10;    &lt;trim prefix=&quot;set&quot; suffixOverrides=&quot;,&quot;&gt;&#10;        &lt;trim prefix=&quot;$col1$ =case&quot; suffix=&quot;end,&quot;&gt;&#10;            &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot;&gt;&#10;                when $cond_col$ = #{$item$.$cond_prop$} then #{$item$.$prop1$}&#10;            &lt;/foreach&gt;&#10;        &lt;/trim&gt;&#10;        &lt;trim prefix=&quot;$col2$ =case&quot; suffix=&quot;end,&quot;&gt;&#10;            &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot;&gt;&#10;                when $cond_col$ = #{$item$.$cond_prop$} then #{$item$.$prop2$}&#10;            &lt;/foreach&gt;&#10;        &lt;/trim&gt;&#10;        &lt;trim prefix=&quot;$col3$ =case&quot; suffix=&quot;end,&quot;&gt;&#10;            &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot;&gt;&#10;                when $cond_col$ = #{$item$.$cond_prop$} then #{$item$.$prop3$}&#10;            &lt;/foreach&gt;&#10;        &lt;/trim&gt;&#10;    &lt;/trim&gt;&#10;    WHERE $cond_col$ IN&#10;    &lt;foreach collection=&quot;$coll$&quot; index=&quot;index&quot; item=&quot;$item$&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;&#10;        #{$item$.$cond_prop$}&#10;    &lt;/foreach&gt;&#10;&lt;/update&gt;" description="update batch" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;updateXXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;java.util.List&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <variable name="cond_prop" expression="" defaultValue="&quot;id&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ins-ignore" value="&lt;insert id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    INSERT IGNORE INTO $table$($col1$, $col2$, $col3$,&#10;                        $col4$, $col5$, $col6$)&#10;    VALUES(#{$prop1$}, #{$prop2$}, #{$prop3$},&#10;           #{$prop4$}, #{$prop5$}, #{$prop6$})&#10;&lt;/insert&gt;" description="insert ignore" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;insertXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col5" expression="" defaultValue="&quot;col5&quot;" alwaysStopAt="true" />
+    <variable name="col6" expression="" defaultValue="&quot;col6&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;ins-ignore-batch" value="&lt;insert id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    INSERT IGNORE INTO $table$($col1$, $col2$, $col3$,&#10;                               $col4$, $col5$, $col6$)&#10;    VALUES&#10;    &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; separator=&quot;,&quot;&gt;&#10;        (#{$item$.$prop1$}, #{$item$.$prop2$}, #{$item$.$prop3$},&#10;         #{$item$.$prop4$}, #{$item$.$prop5$}, #{$item$.$prop6$})&#10;    &lt;/foreach&gt;&#10;&lt;/insert&gt;" description="insert ignore batchly" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;insertXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;java.util.List&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col5" expression="" defaultValue="&quot;col5&quot;" alwaysStopAt="true" />
+    <variable name="col6" expression="" defaultValue="&quot;col6&quot;" alwaysStopAt="true" />
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;upd-batch-safe" value="&lt;update id=&quot;$func_name$&quot; parameterType=&quot;$param_type$&quot;&gt;&#10;    UPDATE $table$&#10;    &lt;trim prefix=&quot;set&quot; suffixOverrides=&quot;,&quot;&gt;&#10;        &lt;trim prefix=&quot;$upd_col1$ =case&quot; suffix=&quot;end,&quot;&gt;&#10;            &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot;&gt;&#10;                &lt;if test=&quot;$item$.$upd_prop1$ != null&quot;&gt;&#10;                    when $cond_col$ = #{$item$.$cond_prop$} then #{$item$.$upd_prop1$}&#10;                &lt;/if&gt;&#10;            &lt;/foreach&gt;&#10;        &lt;/trim&gt;&#10;        &lt;trim prefix=&quot;$upd_col2$ =case&quot; suffix=&quot;end,&quot;&gt;&#10;            &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot;&gt;&#10;                &lt;if test=&quot;$item$.$upd_prop2$ != null&quot;&gt;&#10;                    when $cond_col$ = #{$item$.$cond_prop$} then #{$item$.$upd_prop2$}&#10;                &lt;/if&gt;&#10;            &lt;/foreach&gt;&#10;        &lt;/trim&gt;&#10;        &lt;trim prefix=&quot;$upd_col3$ =case&quot; suffix=&quot;end,&quot;&gt;&#10;            &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot;&gt;&#10;                &lt;if test=&quot;$item$.$upd_prop3$ != null&quot;&gt;&#10;                    when $cond_col$ = #{$item$.$cond_prop$} then #{$item$.$upd_prop3$}&#10;                &lt;/if&gt;&#10;            &lt;/foreach&gt;&#10;        &lt;/trim&gt;&#10;    &lt;/trim&gt;&#10;    WHERE $cond_col$ IN&#10;    &lt;foreach collection=&quot;$coll$&quot; item=&quot;$item$&quot; index=&quot;index&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;&#10;        #{$item$.$cond_prop$}&#10;    &lt;/foreach&gt;&#10;&lt;/update&gt;" description="update batch safely" toReformat="false" toShortenFQNames="true">
+    <variable name="func_name" expression="" defaultValue="&quot;updateXXX&quot;" alwaysStopAt="true" />
+    <variable name="param_type" expression="" defaultValue="&quot;java.util.List&quot;" alwaysStopAt="true" />
+    <variable name="table" expression="" defaultValue="&quot;table&quot;" alwaysStopAt="true" />
+    <variable name="upd_col1" expression="" defaultValue="&quot;upd_col1&quot;" alwaysStopAt="true" />
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <variable name="upd_prop1" expression="" defaultValue="&quot;updProp1&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;cond_col&quot;" alwaysStopAt="true" />
+    <variable name="cond_prop" expression="" defaultValue="&quot;condProp&quot;" alwaysStopAt="true" />
+    <variable name="upd_col2" expression="" defaultValue="&quot;upd_col2&quot;" alwaysStopAt="true" />
+    <variable name="upd_prop2" expression="" defaultValue="&quot;updProp2&quot;" alwaysStopAt="true" />
+    <variable name="upd_col3" expression="" defaultValue="&quot;upd_col3&quot;" alwaysStopAt="true" />
+    <variable name="upd_prop3" expression="" defaultValue="&quot;updProp3&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="vof-batch-values" value="&lt;foreach collection=&quot;$coll$&quot; index=&quot;index&quot; item=&quot;$item$&quot; separator=&quot;,&quot;&gt;&#10;    ($item$.$prop1$, $item$.$prop2$, $item$.$prop3$,&#10;     $item$.$prop4$, $item$.$prop5$, $item$.$prop6$)&#10;&lt;/foreach&gt;" description="value of insert batch values" toReformat="false" toShortenFQNames="true">
+    <variable name="coll" expression="" defaultValue="&quot;array/list/paramKey&quot;" alwaysStopAt="true" />
+    <variable name="item" expression="" defaultValue="&quot;item&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="prop3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <variable name="prop5" expression="" defaultValue="&quot;prop5&quot;" alwaysStopAt="true" />
+    <variable name="prop6" expression="" defaultValue="&quot;prop6&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
