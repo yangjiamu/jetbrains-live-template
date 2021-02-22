@@ -279,4 +279,49 @@
       <option name="XML" value="true" />
     </context>
   </template>
+  <template name="&lt;innsc" value="&lt;if test=&quot;$cond_prop$ != null&quot;&gt;$END$&#10;    $upd_col$ = #{$cond_prop$}&#10;&lt;/if&gt;" description="if not null set column" toReformat="false" toShortenFQNames="true">
+    <variable name="cond_prop" expression="" defaultValue="&quot;condProp&quot;" alwaysStopAt="true" />
+    <variable name="upd_col" expression="" defaultValue="&quot;upd_col&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;innand" value="&lt;if test=&quot;$cond_prop$ != null&quot;&gt;$END$&#10;    AND $cond_col$ $cond$ #{$cond_prop$}&#10;&lt;/if&gt;" description="if not null" toReformat="false" toShortenFQNames="true">
+    <variable name="cond_prop" expression="" defaultValue="&quot;condProp&quot;" alwaysStopAt="true" />
+    <variable name="cond_col" expression="" defaultValue="&quot;cond_col&quot;" alwaysStopAt="true" />
+    <variable name="cond" expression="" defaultValue="&quot;=&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;rm" value="&lt;resultMap id=&quot;$rm_id$&quot; type=&quot;$result_type$&quot;&gt;&#10;    &lt;id column=&quot;$id_col$&quot; jdbcType=&quot;$id_jdbc_type$&quot; property=&quot;$id_prop$&quot;/&gt;&#10;    &lt;result column=&quot;$col1$&quot; jdbcType=&quot;$col1_jdbc_type$&quot; property=&quot;$prop1$&quot;/&gt;&#10;    &lt;result column=&quot;$col2$&quot; jdbcType=&quot;$col2_jdbc_type$&quot; property=&quot;$prop2$&quot;/&gt;&#10;    &lt;result column=&quot;$col3$&quot; jdbcType=&quot;$col3_jdbc_type$&quot; property=&quot;$porp3$&quot;/&gt;&#10;    &lt;result column=&quot;$col4$&quot; jdbcType=&quot;$col4_jdbc_type$&quot; property=&quot;$prop4$&quot;/&gt;&#10;&lt;/resultMap&gt;" description="result mapping" toReformat="false" toShortenFQNames="true">
+    <variable name="rm_id" expression="" defaultValue="&quot;resultMapId&quot;" alwaysStopAt="true" />
+    <variable name="result_type" expression="" defaultValue="&quot;com.XXX&quot;" alwaysStopAt="true" />
+    <variable name="id_col" expression="" defaultValue="&quot;xxx_id&quot;" alwaysStopAt="true" />
+    <variable name="id_jdbc_type" expression="" defaultValue="&quot;BIGINT&quot;" alwaysStopAt="true" />
+    <variable name="id_prop" expression="" defaultValue="&quot;xxxId&quot;" alwaysStopAt="true" />
+    <variable name="col1" expression="" defaultValue="&quot;col1&quot;" alwaysStopAt="true" />
+    <variable name="col1_jdbc_type" expression="" defaultValue="&quot;CHAR&quot;" alwaysStopAt="true" />
+    <variable name="prop1" expression="" defaultValue="&quot;prop1&quot;" alwaysStopAt="true" />
+    <variable name="col2" expression="" defaultValue="&quot;col2&quot;" alwaysStopAt="true" />
+    <variable name="col2_jdbc_type" expression="" defaultValue="&quot;VARCHAR&quot;" alwaysStopAt="true" />
+    <variable name="prop2" expression="" defaultValue="&quot;prop2&quot;" alwaysStopAt="true" />
+    <variable name="col3" expression="" defaultValue="&quot;col3&quot;" alwaysStopAt="true" />
+    <variable name="col3_jdbc_type" expression="" defaultValue="&quot;DATETIME&quot;" alwaysStopAt="true" />
+    <variable name="porp3" expression="" defaultValue="&quot;prop3&quot;" alwaysStopAt="true" />
+    <variable name="col4" expression="" defaultValue="&quot;col4&quot;" alwaysStopAt="true" />
+    <variable name="col4_jdbc_type" expression="" defaultValue="&quot;TEXT&quot;" alwaysStopAt="true" />
+    <variable name="prop4" expression="" defaultValue="&quot;prop4&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="&lt;rc" value="&lt;result column=&quot;$col$&quot; jdbcType=&quot;$jdbc_type$&quot; property=&quot;$prop$&quot;/&gt;" description="result mapping column" toReformat="false" toShortenFQNames="true">
+    <variable name="col" expression="" defaultValue="&quot;col&quot;" alwaysStopAt="true" />
+    <variable name="jdbc_type" expression="" defaultValue="&quot;VARCHAR&quot;" alwaysStopAt="true" />
+    <variable name="prop" expression="" defaultValue="&quot;prop&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
 </templateSet>
